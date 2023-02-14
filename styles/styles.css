@@ -1,0 +1,54 @@
+:root {
+    --first-color: #e6e6e6;
+    --second-color: #131313;
+  }
+  
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+form{
+    text-align: center;
+}
+
+.formField{
+    padding: 10px;
+    margin: 0;
+}
+
+#botonAñadir{
+    font-size: 12px;
+}
+
+td, th {
+    text-align: center;
+    padding: 10px;
+    border: solid rgb(195, 195, 197) 2px;
+}
+
+.tablaContabilidad table{
+    margin: 0 auto;
+}
+
+span{
+    font-weight: bold;
+}
+
+#darkmode{
+    margin : 10px;
+}
+
+.totales{
+padding: 30px;
+align-items: center;
+}
+
+.waves-effect{
+    margin: 10px;
+}
+
+.total{
+    display: none;
+}
