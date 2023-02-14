@@ -1,4 +1,7 @@
 const form= document.getElementById("transactionForm");
+let totalIngresos= 0;
+let totalEgresos = 0;
+let saldo = 0;
 
 //submit form
 form.addEventListener("submit", function(event){
@@ -10,7 +13,7 @@ form.addEventListener("submit", function(event){
     form.reset();
 })
 
-//draw categories of the storage when dom is loaded
+//draw categories and table of the storage when dom is loaded
 document.addEventListener("DOMContentLoaded", function(event){
     drawCategory();
     let transactionObjArray = JSON.parse(localStorage.getItem("transactionData"));
@@ -122,3 +125,5 @@ document.getElementById('darkmode').addEventListener('click', function(){
 })
 
 //buttons totales
+
+  
