@@ -17,6 +17,117 @@
     <title>EcoFortuna</title>
   </head>
   <body>
+    <button
+      id="darkmode"
+      type="button"
+      class="btn waves-effect blue-grey waves-light"
+    >
+      Oscuro/Claro<i class="material-icons right">adjust</i>
+    </button>
+    <h1>
+      EcoFortuna <br />
+      Mi aplicación para gastos e ingresos
+    </h1>
+    <div class="row">
+      <div class="col l6 tablaContabilidad offset-l1 s12">
+        <table id="transactionTable" data-transaction-id="1234">
+          <tr>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+            <th>Categoría</th>
+            <th>Eliminar</th>
+          </tr>
+        </table>
+        <div class="totales">
+          <a class="waves-effect waves-light pink accent-4 btn-small"
+            >Total ingresos</a
+          >
+          <p class="total">45345</p>
+          <a class="waves-effect waves-light pink accent-4 btn-small"
+            >Total egresos</a
+          >
+          <p class="total">4656765</p>
+          <a class="waves-effect waves-light pink accent-4 btn-small">Saldo</a>
+          <p class="total">89879</p>
+        </div>
+      </div>
+      <div class="col l5 s12">
+        <div class="col s8 offset-s2">
+          <form id="transactionForm">
+            <div class="formField">
+              <p>
+                <span>Transacción</span>
+                <label>
+                  <input
+                    class="with-gap"
+                    id="ingreso"
+                    name="transactionType"
+                    type="radio"
+                    value="Ingreso"
+                    checked
+                  />
+                  <span>Ingreso</span>
+                </label>
+                <label>
+                  <input
+                    class="with-gap"
+                    id="egreso"
+                    name="transactionType"
+                    type="radio"
+                    value="Egreso"
+                    checked
+                  />
+                  <span>Egreso</span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field formField">
+              <input
+                required
+                id="transactionDescription"
+                name="transactionDescription"
+                type="text"
+                class="validate"
+              />
+              <label for="transactionDescription">Descripción</label>
+            </div>
+            <div class="input-field formField">
+              <input
+                required
+                min="0"
+                max="100000000000000"
+                id="transactionAmount"
+                name="transactionAmount"
+                type="number"
+                class="validate"
+              />
+              <label for="transactionAmount">Monto</label>
+            </div>
+            <div class="formField">
+              <label for="transactionCategory">Categoría</label>
+              <select
+                class="browser-default"
+                id="transactionCategory"
+                name="transactionCategory"
+              ></select>
+            </div>
+            <div class="formField">
+              <button
+                class="btn waves-effect waves-light"
+                id="botonAñadir"
+                type="submit"
+                name="action"
+              >
+                añadir
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./scripts/main.js"></script>
   </body>
