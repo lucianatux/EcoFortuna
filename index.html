@@ -53,34 +53,6 @@
           </button>
           <p class="total">89879</p>
         </div>
-        <div class="categTotales">
-          <button class="waves-effect waves-light pink accent-4 btn-small">
-            Total ingresos por categoría
-          </button>
-          <p class="total">45345</p>
-          <button class="waves-effect waves-light pink accent-4 btn-small">
-            Total egresos por categoría
-          </button>
-          <p class="total">4656765</p>
-          <button class="waves-effect waves-light pink accent-4 btn-small">
-            Saldo por categoría
-          </button>
-          <p class="total">89879</p>
-        </div>
-        <div class="categ">
-            <label for="newCateg">Agregar Categoría:</label>
-            <input type="text" id="newCateg">
-            <button class="btn waves-effect waves-light" onclick="guardarValor()">Guardar</button>
-        </div>
-        <div class="categ">
-          <label for="categList">Eliminar Categoría:</label>
-          <select
-                class="browser-default"
-                id="categList"
-                name="categList"
-              ></select>
-          <button class="btn waves-effect waves-light" onclick="confirmarValor()">Confirmar</button>
-      </div>
       </div>
       <div class="col l5 s12">
         <div class="col s8 offset-s2">
@@ -154,6 +126,32 @@
               </button>
             </div>
           </form>
+          <div class="moreOptions">
+            <div class="categ">
+              <label for="newCateg">Agregar Categoría:</label>
+              <input type="text" id="newCateg" />
+              <button
+                class="btn waves-effect waves-light"
+                onclick="guardarValor()"
+              >
+                Guardar
+              </button>
+            </div>
+            <div class="categ">
+              <label for="categList">Eliminar Categoría:</label>
+              <select
+                class="browser-default"
+                id="categList"
+                name="categList"
+              ></select>
+              <button
+                class="btn waves-effect waves-light"
+                onclick="confirmarValor()"
+              >
+                Confirmar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
