@@ -18,10 +18,6 @@ form{
     margin: 0;
 }
 
-#botonAñadir{
-    font-size: 12px;
-}
-
 td, th {
     text-align: center;
     padding: 10px;
@@ -47,8 +43,14 @@ align-items: center;
 
 .waves-effect{
     margin: 10px;
+    font-size: 12px;
 }
 
 .total{
     display: none;
+}
+
+.categ{
+    margin: 20px auto;
+    padding: 10px;
 }
