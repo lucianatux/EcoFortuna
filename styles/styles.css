@@ -54,3 +54,7 @@ align-items: center;
     margin: 20px auto;
     padding: 10px;
 }
+
+.moreOptions{
+    border: 2px solid gray;
+}
