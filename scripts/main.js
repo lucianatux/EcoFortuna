@@ -126,6 +126,15 @@ document.getElementById('darkmode').addEventListener('click', function(){
     }
 })
 
-//buttons totales
+//agregar categoria
+const newCategoryInput = document.getElementById("newCateg");
+const addCategoryButton = document.getElementById("addCategoryButton");
 
+addCategoryButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    let newCategory = newCategoryInput.value;
+    insertCategory(newCategory);
+    newCategoryInput.value = "";
+  });
   
+
