@@ -94,6 +94,12 @@ function saveTransactionObj(transactionObj){
     myTransactionArray.push(transactionObj);
     let transactionArrayJSON = JSON.stringify(myTransactionArray);
     localStorage.setItem("transactionData", transactionArrayJSON);
+    // Check if the category already exists in the categories array, and add it if it doesn't
+    let categoryArray = JSON.parse(localStorage.getItem("categories")) || [];
+    if (!categoryArray.includes(transactionObj.transactionCategory)) {
+        categoryArray.push(transactionObj.transactionCategory);
+        localStorage.setItem("categories", JSON.stringify(categoryArray));
+    }
 }
 
 //provides a way to dynamically add new categories to the transaction category select element
@@ -101,11 +107,12 @@ function insertCategory(categoryName){
     const selectElement = document.getElementById("transactionCategory");
     let htmlToInsert = `<option> ${categoryName} </option>`; 
     selectElement.insertAdjacentHTML("beforeend", htmlToInsert);
+    saveCategory(categoryName);
 }
 
 //adds a predefined set of categories to the transaction category select element
 function drawCategory(){
-    let allCategories = [
+    let allCategories = JSON.parse(localStorage.getItem("categories")) || [
         "comida","ocio", "tecnología","transporte"
     ];
     for (let i = 0; i < allCategories.length; i++){
@@ -113,6 +120,27 @@ function drawCategory(){
     }
 }
 
+  // saves a new category in the categories array in localStorage
+function saveCategory(categoryName) {
+    let categoryArray = JSON.parse(localStorage.getItem("categories")) || [];
+    if (!categoryArray.includes(categoryName)) {
+        categoryArray.push(categoryName);
+        localStorage.setItem("categories", JSON.stringify(categoryArray));
+    }
+}
+
+//agregar categoria
+const newCategoryInput = document.getElementById("newCateg");
+const addCategoryButton = document.getElementById("addCategoryButton");
+
+  addCategoryButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    let newCategory = newCategoryInput.value;
+    saveCategory(newCategory);
+    insertCategory(newCategory);
+    newCategoryInput.value = "";
+});
+  
 //dark mode/light mode
 document.getElementById('darkmode').addEventListener('click', function(){
     if (document.body.style.background == 'var(--second-color)'){
@@ -125,16 +153,3 @@ document.getElementById('darkmode').addEventListener('click', function(){
         document.getElementById("transactionAmount").style.color = 'var(--first-color)';
     }
 })
-
-//agregar categoria
-const newCategoryInput = document.getElementById("newCateg");
-const addCategoryButton = document.getElementById("addCategoryButton");
-
-addCategoryButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    let newCategory = newCategoryInput.value;
-    insertCategory(newCategory);
-    newCategoryInput.value = "";
-  });
-  
-
